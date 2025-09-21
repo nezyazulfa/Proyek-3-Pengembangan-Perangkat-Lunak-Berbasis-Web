@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission 4: Web Akademik Interaktif</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="main-nav">
+        <a href="#admin-view" class="nav-link active">Admin</a>
+        <a href="#student-view" class="nav-link">Mahasiswa</a>
+    </nav>
+
+    <main>
+        <div id="admin-view" class="view active-view">
+            <h2>Kelola Mahasiswa</h2>
+            <form id="add-student-form">
+                <input type="text" id="student-name" placeholder="Nama Mahasiswa" required>
+                <span class="error-message">Nama tidak boleh kosong.</span>
+                <input type="text" id="student-nim" placeholder="NIM" required>
+                <span class="error-message">NIM tidak boleh kosong.</span>
+                <button type="submit">Tambah Mahasiswa</button>
+            </form>
+            <p id="admin-success-message" class="success-message"></p>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>NIM</th>
+                        <th>Nama</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="student-table-body"></tbody>
+            </table>
+        </div>
+
+        <div id="student-view" class="view">
+            <h2>Pendaftaran Mata Kuliah</h2>
+            <form id="enroll-course-form">
+                <label for="student-select">Pilih Mahasiswa:</label>
+                <select id="student-select"></select>
+                <div id="course-checklist"></div>
+                <p>Total SKS yang dipilih: <strong id="total-sks">0</strong></p>
+                <button type="submit">Daftarkan</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
